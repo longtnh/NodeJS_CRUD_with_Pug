@@ -1,0 +1,20 @@
+extends ../layouts/mainLayout
+block content
+  .student.my-3 
+  h2.text-center.text-info.my-3 Detail Student
+  p
+    span First Name: 
+    span= student.firstName
+  p
+    span Last Name: 
+    span= student.lastName
+  p
+    span Email: 
+    span= student.email
+  p
+    span Gender: 
+    span= student.gender
+  br
+  p Are you sure you want to delete this record ?
+  a.btn.btn-danger(href="/student/delete/" + student._id) Delete
+  

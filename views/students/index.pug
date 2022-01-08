@@ -1,0 +1,27 @@
+extends ../layouts/mainLayout
+block content
+  .students.my-3 
+    h2.text-center.text-info.my-3 All student
+    if students.length > 0
+      table.table.table-bordered
+        thead
+          tr.bg-info.text-white
+            th  Id
+            th  Name 
+            th  Email
+            th  Gender
+            th  Action
+        tbody
+          each student in students
+            tr
+              td= student._id
+              td= student.firstName + " " + student.lastName
+              td= student.email
+              td= student.gender
+              td
+                a(href="/student/" + student._id) Delete &nbsp;
+                a(href="/student/update/" + student._id) Update
+    else
+      p No user to display
+
+  a.btn.btn-primary(href="/student/create") Create new user

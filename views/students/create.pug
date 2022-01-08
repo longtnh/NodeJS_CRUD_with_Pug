@@ -1,0 +1,19 @@
+extends ../layouts/mainLayout
+block content
+  h2 Create new student
+  form(action="/student/update" method="POST")
+    div.form-group
+      label(id="firstName") First Name
+      input.form-control(type="text", placeholder="First Name", name="firstName")
+    div.form-group
+      label(id="lastName")  Last Name
+      input.form-control(type="text", placeholder="Last Name", name="lastName")
+    div.form-group
+      label(id="email") Email
+      input.form-control(type="text", placeholder="Email", name="email")
+    div.form-group
+      label(id="gender")  Gender
+      input.form-control(type="text", placeholder="Gender", name="gender")
+
+    br
+    input.btn.btn-primary(type="submit")

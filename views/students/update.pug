@@ -1,0 +1,21 @@
+extends ../layouts/mainLayout
+block content
+  .student
+  h2 Update student
+  form(action="/student/update" method="POST")
+    input.form-control(type="hidden", name="_id", value=student._id)
+    div.form-group
+      label(id="firstName") First Name
+      input.form-control(type="text", placeholder="First Name", name="firstName", value=student.firstName)
+    div.form-group
+      label(id="lastName")  Last Name
+      input.form-control(type="text", placeholder="Last Name", name="lastName", value=student.lastName)
+    div.form-group
+      label(id="email") Email
+      input.form-control(type="text", placeholder="Email", name="email", value=student.email)
+    div.form-group
+      label(id="gender")  Gender
+      input.form-control(type="text", placeholder="Gender", name="gender", value=student.gender)
+
+    br
+    input.btn.btn-primary(type="submit")
