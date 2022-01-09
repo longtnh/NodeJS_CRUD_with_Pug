@@ -1,5 +1,6 @@
 extends ../layouts/mainLayout
 block content
+  - let genders = ["Male", "Female", "Other"]
   h2 Create new student
   form(action="/student/create" method="POST")
     div.form-group
@@ -15,9 +16,8 @@ block content
       label(id="gender")  Gender
       br
       select.form-control(name="gender")
-        option(value="Male") Male
-        option(value="Female") Female
-        option(value="Other") Other
+        each gender in genders
+          option(value = gender) #{gender}
 
     br
     input.btn.btn-primary(type="submit")

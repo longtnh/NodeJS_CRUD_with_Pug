@@ -1,5 +1,6 @@
 extends ../layouts/mainLayout
 block content
+  - let genders = ["Male", "Female", "Other"]  
   .student
   h2 Update student
   form(action="/student/update" method="POST")
@@ -17,9 +18,9 @@ block content
       label(id="gender")  Gender
       br
       select.form-control(name="gender")
-        option(value="Male" selected=(student.gender == "Male") ) Male
-        option(value="Female" selected=(student.gender == "Female") ) Female
-        option(value="Other" selected=(student.gender == "Other") ) Other
+        each gender in genders
+          option(value = gender selected=(student.gender == gender) ) #{gender}
 
     br
     input.btn.btn-primary(type="submit")
+
