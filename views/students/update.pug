@@ -15,7 +15,11 @@ block content
       input.form-control(type="text", placeholder="Email", name="email", value=student.email)
     div.form-group
       label(id="gender")  Gender
-      input.form-control(type="text", placeholder="Gender", name="gender", value=student.gender)
+      br
+      select.form-control(name="gender")
+        option(value="Male" selected=(student.gender == "Male") ) Male
+        option(value="Female" selected=(student.gender == "Female") ) Female
+        option(value="Other" selected=(student.gender == "Other") ) Other
 
     br
     input.btn.btn-primary(type="submit")

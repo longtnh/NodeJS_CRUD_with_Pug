@@ -1,7 +1,7 @@
 extends ../layouts/mainLayout
 block content
   h2 Create new student
-  form(action="/student/update" method="POST")
+  form(action="/student/create" method="POST")
     div.form-group
       label(id="firstName") First Name
       input.form-control(type="text", placeholder="First Name", name="firstName")
@@ -13,7 +13,11 @@ block content
       input.form-control(type="text", placeholder="Email", name="email")
     div.form-group
       label(id="gender")  Gender
-      input.form-control(type="text", placeholder="Gender", name="gender")
+      br
+      select.form-control(name="gender")
+        option(value="Male") Male
+        option(value="Female") Female
+        option(value="Other") Other
 
     br
     input.btn.btn-primary(type="submit")
